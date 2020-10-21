@@ -1,0 +1,19 @@
+{
+  "name": "henzeb/composer-link",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "require": {
+    "composer-plugin-api": "^1.1"
+  },
+  "require-dev": {
+    "composer/composer": "^1.0"
+  },
+  "extra": {
+    "class": "henzeb\\ComposerLink\\LinkPlugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "henzeb\\ComposerLink\\": "src"
+    }
+  }
+}
