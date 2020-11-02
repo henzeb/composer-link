@@ -26,7 +26,6 @@ class LinkPlugin implements PluginInterface, Capable, EventSubscriberInterface
 
     public function activate(Composer $composer, IOInterface $io)
     {
-
         if(static::isNoTemporaryClass()) {
             return;
         }
@@ -71,12 +70,20 @@ class LinkPlugin implements PluginInterface, Capable, EventSubscriberInterface
     }
 
     /**
-     * Composer seems to load this plugin class three times. dunno why, but this ugly workaround should prevent it.
+     * Composer 1 seems to load this plugin class three times. dunno why, but this ugly workaround should prevent it.
      * @return bool
      */
     public static function isNoTemporaryClass(): bool
     {
         return get_class() !== 'henzeb\\ComposerLink\\LinkPlugin';
+    }
+
+    public function deactivate(Composer $composer, IOInterface $io) {
+
+    }
+
+    public function uninstall(Composer $composer, IOInterface $io) {
+
     }
 
 
